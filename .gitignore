@@ -1,1 +1,3 @@
-# Arquivos Go
+# Arquivos Go executáveis.
+
+*.exe
