@@ -1,0 +1,178 @@
+COMO JOGAR MEU PROJETO LOCAL PARA O GIT SEM ANTES TER QUE CRIÁ-LO NO GITHIB?
+
+	* Exemplo.
+	* Apenas no github crie um novo repositório vazio, sem readme e nada!
+	* Estando na pasta do seu projeto, faça:
+	git init
+	git add .
+	git config user.name ivansansao
+	git config user.email aivanplus@gmail.com
+	
+	* Syntax: git remote add <apelido para o sua url do github> <url copiada do seu git>
+	git remote add origin https://github.com/ivansansao/Projeto1.git
+	
+	* Agora voçê deve ir no site do Github e criar o repositório sem nada dentro (Nem mesmo o Readme ou GitIgnore) senão vai dar erro.
+	
+	* Preste atenção que 'git push' não vai funcionar porque precisa dizer que temos que enviar a Branch 'master'
+	git push origin master && O Windows deve aqui pedir usuário e senha do github
+	
+	* Para não ter que sempre fazer isso acima, podemos deixar definido esses parâmetros. (-u de Upstream)
+	git push -u origin master && O windows irá pedir usuário e senha do github.
+	
+COLOCAR UM COMENTÁRIO MAIS ELABORADO AO FAZER COMMIT.
+
+	git commit && Vai abrir o editor que você definiu como padrão, note que # não vai para o commit.
+
+VOLTAR PROJETO AO STATUS ANTERIOR, RESETAR, NOTE O ^ QUE INDICA QUANTO PARA TRÁS VOLTAR, ^^ VOLTA DOIS.
+
+	git reset --hard head^
+
+EXECUTAR MAIS DE UM COMANDO 'GIT' POR VEZ, NOTE O '&&'
+
+	git add meuarquivo.txt && git commit -m "Meu commit"
+
+DAR PERMISSÕES PARA COLABORADORES PODEREM DAR PUSH NO MEU GITHUB
+
+	* No github pasta ir em Setting -> Colaboradores e adicionar a conta de quem pode Colaborar no projeto
+
+FAZER PUSH NA origin com BRANCH dica-3
+
+	git push origin dica-3
+	* dica-3 é uma Branch
+	
+CLONAR INFORMANDO UMA PASTA
+
+	git clone https://github.com/ivansansao/Projeto1.git MinhaLocalPasta
+
+LISTAR AS BRACHES
+
+	git branch
+	
+CRIAR UMA NOVA BRANCH
+
+	git branch nova-branch
+	
+CRIAR UMA NOVA BRANCH E JÁ SELECIONÁ-LA
+
+	git checkout -b nova-branch
+	
+USAR A NOVA BRANCH
+
+	git checkout nova-branch
+
+JUNTAR AS DUAS BRANCHES (Se ouver conflito os mesmo irão aparecer dentro dos arquivos conflitados, aí é só alterar o arquivo e dar um Commit)
+
+	git merge nova-branch && Tem que estar na branch Master pra isso.
+	* git commit termina o Merge
+	
+VER O GRÁFICO DOS COMMITS
+
+	git log --graph
+	
+VER O GRÁFICO DOS COMMITS RESUMIDO.
+
+	git log --graph --oneline
+	
+EXCLUIR UMA BRANCH
+
+	git branch -d nova-branch
+	
+OUTRO USUÁRIO QUER CRIAR UMA ISSUE.
+
+	* O solicitante deve simplemente ir no github do projeto e criar uma Issue.
+	
+CRIAR UMA ISSUE NO GITHUB E ASSOCIAR O COMMIT COM ESSA ISSUE. (Coloque no comentário o #2 que o github associa automaticamente a issue 2)
+
+	&& Crie no site a nova issue.
+	git commit -m "Meu comentário #2"
+	
+ENCERRAR A ISSUE
+	
+	git commit -m "Meu comentário closes #2" && Note o 'closes #2' que fecha a Issue.
+	
+JOGAR AS COISAS LOCAIS PARA O GITHUB
+
+	git push && Normal way
+	
+FAZER ANOTAÇÃO EM UMA LINHA ESPECÍFICA NO GITHUB
+
+	* No github basta acessar a Issue, clicar na linha que você quer e digitr um comentário.
+
+LEVAR NOVAS BRANCHES PARA O GITHUB
+
+	* No github você consegue selecionar as branches num Combo.
+	git push origin minha-branch && Só assim funciona push de nova branch
+	
+	
+APAGAR AS SUAS ALTERAÇÕES ANTES DO COMMIT.
+
+	git checkout arq1.txt
+	
+REMOVER O ARQ1.TXT DA Stage
+
+	git reset head arq1.txt
+	
+
+TROCAR A BRANCH PADRÃO DO GITHUB
+
+	No Github ir em Settings > Branches e trocar, a partir daí o Push por padrão já vai fazer sempre nessa Branch
+	
+PARAR DE FAZER ALGO PARA CORRIGIR UM BUG OU FAZER OUTRA COISA.
+
+	git stash && Vai jogar o que você está fazendo pra um cantinho temporário pra continuar depois.
+	
+	git stash apply && Para quando você quiser voltar ao trabalho que você estava fazendo.
+	
+	* git stash Tem outros parâmetros para salvar, resolver conflitos etc.
+	
+	git stash list && Lista todos os Stashes
+	
+	
+	
+
+
+
+
+***********************
+Instale o Git em: https://git-scm.com/
+git init -> Digite isso na pasta que você quer versionar (Criar um repositório local)
+	Para dizer que o git vai controlar a pasta
+git config --global user.name Ivan
+git config --global user.email ivan@sances.com.br
+git config --global core.editor notepad
+	Pra dizer qual editor o git vai usar
+
+Crie um arquivo ex: arquivo.txt
+git status
+	Mostra o status dos arquivos.
+git add .\arquivo.txt
+	Adiciona o arquivo na Stage
+git commit -m "Adicionei o primeiro fonte"
+	Comitou o arquivo, digite sempre git status pra ver como está.
+git add .
+	Adicionar todos na stage
+git commit -am "Últimas alterações"
+	Se você já adicionou na Stage não precisa fazer denovo então "am" é adiciona e commita.
+git log 
+	Mostrar as alterações (Digite Q para sair)
+git checkout deea7901ae1b8707cbe2ddea8171b6f936376082
+	Mostra a foto desse commit.
+git checkout master
+	Digite para voltar o arquivo inteiro que você tinha.
+	
+git clone https://github.com/ivansansao/Projeto1.git
+	Crie uma conta Publica no GitHub, crie um projeto e na sua máquina, digite esse comando acima de exemplo que já vem preparado para versionamento.
+	
+Crie de exemplo o arquivo index.html
+	git add index.html
+	
+git push
+	Joga os arquivos para o repositório no GitHub (Vai dar erro agora porque tem que dar permissão)
+	git config user.name ivansansao
+	git config user.email aivanplus@gmail.com
+
+git pull
+	Crie um arquivo no site do GitHub exemplo teste.txt, vá no git local e digite git pull para puxar as coisas do site github para sua máquina.
+	
+
+
