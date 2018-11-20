@@ -1,0 +1,33 @@
+Sejam os exemplo:
+
+	comandos.go
+
+Link do Repositório do curso no Github
+
+https://github.com/cod3rcursos/curso-go
+
+
+VER O HELP DE FORM OFFLINE
+
+	* Acesse o Chrome e veja no localhost
+	godoc -http=:6060
+	
+VERIFICAR O CÓDIGO SE TEM FALHAS OU COISAS INÚTEIS
+
+	go vet comandos.go
+	
+GERAR UM EXECUTÁVEL
+
+	go build comandos.go
+	
+COMPILAR E JÁ EXECUTAR
+
+	go run comandos.go
+	
+INSTALAR O DRIVER DO MYSQL
+
+	go get -u github.com/go-sql-driver/mysql
+	
+VER ONDE ESTÁ INSTALADO O GO?
+
+	go env
