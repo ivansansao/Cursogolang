@@ -8,6 +8,8 @@ COMO JOGAR MEU PROJETO LOCAL PARA O GIT SEM ANTES TER QUE CRIÁ-LO NO GITHIB?
 	git config user.name ivansansao
 	git config user.email aivanplus@gmail.com
 	
+	git commit -m "Carga inicial"
+	
 	* Syntax: git remote add <apelido para o sua url do github> <url copiada do seu git>
 	git remote add origin https://github.com/ivansansao/Projeto1.git
 	
